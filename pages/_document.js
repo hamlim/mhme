@@ -1,9 +1,7 @@
 import React from 'react';
-
-import cssvariables from '../styles/variablescss.js';
-
-import Document, { Head, Main, NextScript } from 'next/document'
-import flush from 'styled-jsx/server'
+import Document, { Head, Main, NextScript } from 'next/document';
+import flush from 'styled-jsx/server';
+import color from 'css-color-function';
 
 export default class MyDocument extends Document {
   static getInitialProps ({ renderPage }) {
@@ -16,14 +14,15 @@ export default class MyDocument extends Document {
     return (
      <html>
        <Head>
+         <link rel="stylesheet" href="/static/src/hljs-ocean.css" />
          <style>{`
            :root {
             --a: #F08080;
             --a-muted: #FFA07A;
             --b: #4169E1;
-            --b-muted: color(#4169E1 lightness(+ 15%));
+            --b-muted: ${color.convert('color(#4169E1 lightness(+ 15%))')};
             --c: springgreen;
-            --c-muted: color(springgreen lightness(+ 25%));
+            --c-muted: ${color.convert('color(springgreen lightness(+ 25%))')};
 
             --d: #1abc9c;
             --d-muted: #9DE2D5;
@@ -31,6 +30,7 @@ export default class MyDocument extends Document {
 
             --gray: #566573;
             --gray-muted: #D5D8DC;
+            --light-gray: ${color.convert('color(#FFFFFF shade(8%))')};
             --white: #FEFEFE;
             --black: #0f0f0f;
 

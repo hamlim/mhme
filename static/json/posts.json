@@ -447,7 +447,8 @@
     "year": "2016",
     "day": "",
     "content": "photosv2",
-    "lede": ""
+    "lede": "",
+    "route": "/posts/photosv2"
   },
   {
     "title": "Recent Projects",
@@ -587,7 +588,8 @@
     "year": "2016",
     "day": "",
     "content": "photosv1",
-    "lede": ""
+    "lede": "",
+    "route": "/posts/photosv1"
   },
   {
     "title": "Weekend Projects 8",
