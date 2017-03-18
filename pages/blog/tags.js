@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import 'whatwg-fetch';
 import Head from 'next/head';
-import Link from 'next/link';
 import Header from '../../components/header';
 import Subnav from '../../components/subnav';
 import TagApp from '../../utils/tagapp';
