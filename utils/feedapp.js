@@ -28,11 +28,15 @@ export default ({feed}) => (
 
       .link:hover > .postcard,
       .link:focus > .postcard {
-        box-shadow: 0 10px 5em -30px var(--b, #4169E1);
+        box-shadow: 0 0 1em 0 var(--b, #4169E1);
       }
 
       .list {
         list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1em;
+        margin: 2rem 0;
       }
 
       .postcard {
@@ -40,6 +44,7 @@ export default ({feed}) => (
         max-width: 25rem;
         padding: 1em;
         border-radius: 5px;
+        height: 100%;
       }
 
       .posttitle {
@@ -57,8 +62,7 @@ export default ({feed}) => (
       @media screen and (min-width: 45rem) {
         .postcard {
           will-change: box-shadow;
-          box-shadow: 0 10px 5em -30px var(--a, #F08080);
-          margin: 0 auto 3rem;
+          box-shadow: 0 0 1em 0 #eee;
         }
       }
 
