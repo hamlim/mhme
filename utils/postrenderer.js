@@ -168,6 +168,14 @@ class PostRenderer extends Component {
             background-color: #F19990;
           }
 
+          .article code:not([data-lang]) {
+            background-color: var(--light-gray);
+            color: var(--d);
+            display: inline-block;
+            padding: 0 .3em;
+            border-radius: 4px;
+          }
+
         `}</style>
       </div>
     )

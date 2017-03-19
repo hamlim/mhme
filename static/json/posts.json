@@ -1,5 +1,15 @@
 [
   {
+    "slug": "Redesign-v6",
+    "title": "Rebuilding My Entire Website",
+    "tags": ["Development"],
+    "month": "March",
+    "year": "2017",
+    "day": "19th",
+    "content": "Redesignv6",
+    "lede": ""
+  },
+  {
     "slug": "Making-Mustache-in-seven-lines",
     "title": "Remaking Mustache.js with Template Literals",
     "tags": ["Development"],
