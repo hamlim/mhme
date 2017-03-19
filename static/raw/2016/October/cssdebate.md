@@ -13,7 +13,7 @@ Componentization was the ultimate step towards keeping code DRY, meaning that de
 The Great Debate really kicked off when an engineer at Facebook named Christopher Chedeau, gave a talk where he exposed some of the issues he and his team had seen with CSS while developing web applications and components at Facebook. The entire presentation can be summarized by the slide below but the entire slide deck is <a href="https://speakerdeck.com/vjeux/react-css-in-js" data-css-link-article>available here</a> to read through.
 
 <div class="has-image">
-  <img data-css-image src="/assets/images/posts/TheGreatDebate/The_Slide.jpg" alt="The slide that started the great debate." />
+  <img data-css-image src="/static/assets/images/posts/TheGreatDebate/The_Slide.jpg" alt="The slide that started the great debate." />
 </div>
 
 In the slide Christopher describes 7 issues with the way that CSS is currently spec'd out.

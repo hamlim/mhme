@@ -24,7 +24,7 @@ exports.default = function (_ref) {
   }, _react2.default.createElement('ul', { className: 'list', 'data-jsx': 1086178353
   }, feed.map(function (post, index) {
     return _react2.default.createElement('li', { key: index, 'data-jsx': 1086178353
-    }, _react2.default.createElement(_link2.default, { href: { pathname: '/blog/post', query: { slug: '' + post.slug } } }, _react2.default.createElement('a', { className: 'link', 'data-jsx': 1086178353
+    }, _react2.default.createElement(_link2.default, { href: post.route ? post.route : { pathname: '/blog/post', query: { slug: '' + post.slug } } }, _react2.default.createElement('a', { className: 'link', 'data-jsx': 1086178353
     }, _react2.default.createElement('div', { className: 'postcard', 'data-jsx': 1086178353
     }, _react2.default.createElement('h4', { className: 'posttitle', 'data-jsx': 1086178353
     }, post.title), _react2.default.createElement('p', { className: 'postlede', 'data-jsx': 1086178353

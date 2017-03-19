@@ -12,7 +12,7 @@
   every time you open a new tab then this extension is for you!
 </p>
 <div class="has-video">
-  <video data-css-video title="My current age" src="/assets/videos/motivate.mp4" autoplay loop></video>
+  <video data-css-video title="My current age" src="/static/assets/videos/motivate.mp4" autoplay loop></video>
 </div>
 ### 2.
 <p>

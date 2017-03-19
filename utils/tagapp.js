@@ -22,7 +22,9 @@ const TagApp = ({feed}) => {
 						{feed.map((post, index) => {
 							if (post.hasOwnProperty('tags') && post.tags.includes(tag)) {
 								return (
-									<li key={index}><Link href={{ pathname: '/blog/post', query: { slug: `${post.slug}` }}}><a className="link">{post.title}</a></Link></li>
+									<li key={index}><Link href={
+										post.route ? post.route : 
+										{ pathname: '/blog/post', query: { slug: `${post.slug}` }}}><a className="link">{post.title}</a></Link></li>
 								);
 							}
 						})}

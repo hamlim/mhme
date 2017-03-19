@@ -5,7 +5,7 @@ However recently I have been wanting to both (1) develop and showcase some desig
 The website that I have been talking about is known as LMS on campus, because it is a Blackboard Learning Management System that RPI licenses from <a href="http://www.blackboard.com/learning-management-system/blackboard-learn.aspx">blackboard</a>. The version of LMS that we are using here at RPI is fairly different from the mockups that are shown in that blackboard website above, in face here is a screen grab of what the website looks like for me for this semester:
 
 <figure class="figure">
-  <img class="img" src="/assets/images/posts/lms.png" alt="The current LMS landing page after logging in." title="RPI&#39;s Blackboard LMS"/>
+  <img class="img" src="/static/assets/images/posts/lms.png" alt="The current LMS landing page after logging in." title="RPI&#39;s Blackboard LMS"/>
   <figcaption class="horizontal--center">
     The current LMS landing page after logging in.
   </figcaption>

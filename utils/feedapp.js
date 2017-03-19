@@ -6,7 +6,9 @@ export default ({feed}) => (
     <ul className="list">
       {feed.map((post, index) => (
         <li key={index}>
-          <Link href={{ pathname: '/blog/post', query: { slug: `${post.slug}` }}}><a className="link">
+          <Link href={
+            post.route ? post.route :
+            { pathname: '/blog/post', query: { slug: `${post.slug}` }}}><a className="link">
             <div className="postcard">
               <h4 className="posttitle">{post.title}</h4>
               <p className="postlede">

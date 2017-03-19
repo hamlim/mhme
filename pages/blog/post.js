@@ -23,14 +23,6 @@ export default class extends Component {
       return r.json();
     }).then(feed => {
       this.setState({feed});
-      feed.forEach(post => {
-        if (post.hasOwnProperty('route')) {
-          if (props.query.slug === post.slug) {
-            Router.push(post.path);
-            return;
-          }
-        }
-      })
       let post = feed.find(p => p.slug === props.query.slug);
       post && this.setState({post});
     }).catch(err => console.warn(err));
