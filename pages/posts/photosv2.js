@@ -96,6 +96,8 @@ export default class extends Component {
     return (
       <main className="wrapper">
         <Head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>Photos v2</title>
         </Head>
         <Header activePage="blog" />

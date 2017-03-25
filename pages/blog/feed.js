@@ -21,6 +21,8 @@ export default class extends Component {
     return (
       <main className="Feed">
         <Head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>My Feed of Blog Posts</title>
         </Head>
         <Header />

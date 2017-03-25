@@ -35,6 +35,8 @@ export default class extends Component {
         {(this.state && this.state.post) && (
           <div>
             <Head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
               <title>{this.state.post && this.state.post.title}</title>
             </Head>
             <div className="wrapper">

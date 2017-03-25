@@ -34,8 +34,8 @@ export default ({feed}) => (
       .list {
         list-style: none;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 1em;
+        grid-template-columns: 1fr;
         margin: 2rem 0;
       }
 
@@ -60,6 +60,9 @@ export default ({feed}) => (
         margin: .5em 0;
       }
       @media screen and (min-width: 45rem) {
+        .list {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
         .postcard {
           will-change: box-shadow;
           box-shadow: 0 0 1em 0 #eee;

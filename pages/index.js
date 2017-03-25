@@ -18,19 +18,11 @@ export default (props) => (
         <h2 className="lead">
           Hello 👋🏼.
           <br />
-          I am Matt Hamlin, a web developer, web designer, and I also tend to write a bit as well.
+          I am Matt Hamlin, a web developer.
         </h2>
         <p className="second">
           I make small <Link href="/projects"><a className="link">side projects</a></Link> of all kinds in my free time, and work
           with some pretty smart people at Wayfair currently.
-        </p>
-        <p className="third">
-          I also write quite a bit about a ton of things like <Link href="/blog/tags/#development"><a className="link">Development</a></Link>
-        , <Link href="/blog/tags/#daily"><a className="link">Daily</a></Link> content, as well as a lot of <Link href="/blog/tags/#random"><a className="link">Random</a></Link> things.
-        </p>
-        <p className="fourth">
-          I recently worked on a new and exciting project called <a className="link" href="https://goexploring.today/Future-Grid">Future-Grid</a>. Check it out 
-          if you are interested in CSS grid frameworks!
         </p>
       </section>
     </article>
@@ -91,14 +83,6 @@ export default (props) => (
     .second {
       grid-column: 2 / -1;
       grid-row: 2 / 3;
-    }
-    .third {
-      grid-column: 1 / 2;
-      grid-row: 3 / 4;
-    }
-    .fourth {
-      grid-column: 2 / -1;
-      grid-row: 4 / 5;
     }
     .content {
       grid-template-columns: 1fr 1fr;

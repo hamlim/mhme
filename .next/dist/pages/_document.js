@@ -67,28 +67,36 @@ var MyDocument = function (_Document) {
           fileName: _jsxFileName,
           lineNumber: 16
         }
-      }, _react2.default.createElement('link', { rel: 'stylesheet', href: '/static/src/hljs-ocean.css', __source: {
+      }, _react2.default.createElement('meta', { charset: 'UTF-8', __source: {
           fileName: _jsxFileName,
           lineNumber: 17
+        }
+      }), _react2.default.createElement('meta', { name: 'viewport', content: 'width=device-width, initial-scale=1.0', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 18
+        }
+      }), _react2.default.createElement('link', { rel: 'stylesheet', href: '/static/src/hljs-ocean.css', __source: {
+          fileName: _jsxFileName,
+          lineNumber: 19
         }
       }), _react2.default.createElement('style', {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 20
         }
       }, '\n           :root {\n            --a: #F08080;\n            --a-muted: #FFA07A;\n            --b: #4169E1;\n            --b-muted: ' + _cssColorFunction2.default.convert('color(#4169E1 lightness(+ 15%))') + ';\n            --c: springgreen;\n            --c-muted: ' + _cssColorFunction2.default.convert('color(springgreen lightness(+ 25%))') + ';\n\n            --d: #1abc9c;\n            --d-muted: #9DE2D5;\n\n\n            --gray: #566573;\n            --gray-muted: #D5D8DC;\n            --light-gray: ' + _cssColorFunction2.default.convert('color(#FFFFFF shade(8%))') + ';\n            --white: #FEFEFE;\n            --black: #0f0f0f;\n\n            --fonts: -apple-system,\n                      BlinkMacSystemFont,\n                      Roboto,\n                      Oxygen-Sans,\n                      Ubuntu,\n                      Cantarell,\n                      sans-serif;\n            --font-size: 18px;\n\n            --width: 45rem;\n            --width-s: 30rem;\n          }\n\n\n          *, *::after, *::before {\n            box-sizing: inherit;\n            margin: 0;\n            padding: 0;\n          }\n          html {\n            box-sizing: border-box;\n            font-family: var(--fonts);\n            font-size: var(--font-size);\n            transition: background-color 1s, color 1s;\n          }')), _react2.default.createElement('body', { className: 'custom_class', __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 66
         }
       }, _react2.default.createElement(_document.Main, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 65
+          lineNumber: 67
         }
       }), _react2.default.createElement(_document.NextScript, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 66
+          lineNumber: 68
         }
       })));
     }

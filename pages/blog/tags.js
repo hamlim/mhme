@@ -21,6 +21,8 @@ export default class extends Component {
     return (
       <main>
         <Head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
           <title>My Blog Tags</title>
         </Head>
         <Header activePage="blog"/>

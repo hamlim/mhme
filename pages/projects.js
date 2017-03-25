@@ -6,6 +6,8 @@ import Header from '../components/header';
 export default () => (
   <main className="Projects">
     <Head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>My Projects</title>
     </Head>
     <Header activePage="projects" />
