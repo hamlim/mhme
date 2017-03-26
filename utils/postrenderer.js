@@ -51,6 +51,8 @@ class PostRenderer extends Component {
             margin-bottom: 3rem;
             margin-left: 1rem;
             margin-right: 1rem;
+            display: flex;
+            flex-direction: column;
           }
           @media screen and (min-width: 45rem) {
             .article {
@@ -85,6 +87,12 @@ class PostRenderer extends Component {
           }
           .article figure {
             text-align: center;
+          }
+          .article aside {
+            background-color: var(--light-gray);
+            display: inline-block;
+            padding: .5em 1em;
+            align-self: flex-end;
           }
           .article img {
             max-width: 90%;

@@ -1,5 +1,25 @@
 [
   {
+    "slug": "Calendar-Project",
+    "title": "Calendar Project",
+    "tags": ["Development"],
+    "month": "March",
+    "year": "2017",
+    "day": "26th",
+    "content": "Calendar",
+    "lede": "A semi-live blog on building a web app."
+  },
+  {
+    "slug": "Javascript-Weirdness",
+    "title": "Javascript Weirdness",
+    "tags": ["Development"],
+    "month": "March",
+    "year": "2017",
+    "day": "26th",
+    "content": "Javascriptwierdness",
+    "lede": "Javascript is pretty funky sometimes."
+  },
+  {
     "slug": "Redesign-v6",
     "title": "Rebuilding My Entire Website",
     "tags": ["Development"],
