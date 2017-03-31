@@ -36,3 +36,34 @@ After about an hour of tinkering around and finding a really odd bug with some o
 going for.
 
 <p data-height="265" data-theme-id="0" data-slug-hash="qryLjy" data-default-tab="result" data-user="matthamlin" data-embed-version="2" data-pen-title="qryLjy" class="codepen">See the Pen <a href="http://codepen.io/matthamlin/pen/qryLjy/" target="_blank" rel="noopener nonreferer">Inital Demo</a> by Matt Hamlin (<a href="http://codepen.io/matthamlin">@matthamlin</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+
+
+### Next steps:
+
+After my initial mock up on code pen I am finally ready to boot up a new directory with Nextjs, React, ReactDOM, and styled-jsx-postcss. This is my new go to install 
+command:
+
+```Javascript
+yarn add next@2.0.0 react react-dom styled-jsx-postcss
+```
+
+First before installing all that I need to determine a good name for the project. im thinking **Months**.
+
+### Two Days Later:
+
+Ok so I have the rough draft up and working locally, there are however some changes that I might need to make to get this working the way I want it.
+
+Lets document them down here in this post:
+
+* Performance is terrible even on a mildly specd macbook pro (what happens when you render out 365(6) elements)
+* I want a scroll indicator somewhere saying what month you are scrolled on
+* I want the sidebar to represent the current selected day (reminders + event info there)
+
+
+### Yet another day later:
+
+So Today I split out each day as a separate component, adding some content and styles.
+
+I also added some logic to scroll to the element, highlight it if it is the current day and a few other things.
+
+Still have no idea how to implement the proper rendering of items to be more efficient and improve performance.
