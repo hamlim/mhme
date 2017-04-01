@@ -67,3 +67,6 @@ So Today I split out each day as a separate component, adding some content and s
 I also added some logic to scroll to the element, highlight it if it is the current day and a few other things.
 
 Still have no idea how to implement the proper rendering of items to be more efficient and improve performance.
+
+
+Going to stop updates on this project until I get back from my trip. The next week will be spent working on getting a really basic website set up for tracking photos, memories, videos etc from my trip to New Zealand.
