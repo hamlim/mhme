@@ -1,5 +1,15 @@
 [
   {
+    "slug": "CSS-in-JS",
+    "title": "CSS in JS",
+    "tags": ["Development"],
+    "month": "April",
+    "year": "2017",
+    "day": "2nd",
+    "content": "CSSinJS",
+    "lede": "Writing css within javascript, not the way you are thinking."
+  },
+  {
     "slug": "Calendar-Project",
     "title": "Calendar Project",
     "tags": ["Development"],
