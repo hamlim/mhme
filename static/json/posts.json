@@ -1,5 +1,15 @@
 [
   {
+    "slug": "Snapchat-Spectacles",
+    "title": "Snapchat Spectacles",
+    "tags": ["Daily"],
+    "month": "April",
+    "year": "2017",
+    "day": "3rd",
+    "content": "Spectacles",
+    "lede": "Some thoughts on Snapchat Spectacles"
+  },
+  {
     "slug": "CSS-in-JS",
     "title": "CSS in JS",
     "tags": ["Development"],
