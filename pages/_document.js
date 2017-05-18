@@ -9,11 +9,10 @@ export default class MyDocument extends Document {
     const styles = flush()
     return { html, head, styles }
   }
-
   render () {
     return (
-     <html>
-       <Head>
+      <html>
+        <Head>
          <meta charset="UTF-8" />
          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
          <link rel="stylesheet" href="/static/src/hljs-ocean.css" />
@@ -61,11 +60,14 @@ export default class MyDocument extends Document {
             font-size: var(--font-size);
             transition: background-color 1s, color 1s;
           }`}
-          </style>
+        </style>
        </Head>
        <body>
          <Main />
          <NextScript />
+         <script type="text/javascript">
+           {`console.log('test');`}
+         </script>
        </body>
      </html>
     )

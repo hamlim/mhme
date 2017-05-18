@@ -16,7 +16,10 @@ export default () => (
     <article className="wrapper">
       <section>
         <h2>
-          Welcome to my blog. I write about a lot of different things, I suggest checking out my <Link href="/blog/tags"><a className="link">tags</a></Link>.
+          Welcome to my blog. I write about a lot of different things, I suggest checking out my
+          {' '}
+          <Link href="/blog/tags"><a className="link">tags</a></Link>
+          .
         </h2>
       </section>
     </article>

@@ -1,5 +1,16 @@
 [
   {
+    "slug": "On-Projects",
+    "title": "On Projects",
+    "tags": ["Daily", "Development"],
+    "month": "May",
+    "year": "2017",
+    "day": "18th",
+    "content": "OnProjects",
+    "lede": "Diving into the concept of side projects.",
+    "route": "/posts/OnProjects"
+  },
+  {
     "slug": "Snapchat-Spectacles",
     "title": "Snapchat Spectacles",
     "tags": ["Daily"],
