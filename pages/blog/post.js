@@ -1,63 +1,69 @@
-import React, {Component} from 'react';
-import Head from "next/head";
+import React, { Component } from 'react'
+import Head from 'next/head'
 import Router from 'next/router'
-import Link from 'next/link';
-import 'whatwg-fetch';
-import Header from '../../components/header';
-import PostRenderer from '../../utils/postrenderer';
+import Link from 'next/link'
+import 'whatwg-fetch'
+import Header from '../../components/header'
+import PostRenderer from '../../utils/postrenderer'
 
 export default class extends Component {
-  static async getInitialProps ({ pathname, query }) {
-    this.pathname = pathname;
-    this.query = query;
-    return {pathname, query};
-  }
-  state = {
-    feed: [],
-    post: null
-  }
+	static async getInitialProps({ pathname, query }) {
+		this.pathname = pathname
+		this.query = query
+		return { pathname, query }
+	}
+	state = {
+		feed: [],
+		post: null,
+	}
 
-  componentDidMount() {
-    const props = this.props;
-    fetch('/static/json/posts.json').then(r => {
-      return r.json();
-    }).then(feed => {
-      this.setState({feed});
-      let post = feed.find(p => p.slug === props.query.slug);
-      post && this.setState({post});
-    }).catch(err => console.warn(err));
-  }
+	componentDidMount() {
+		const props = this.props
+		fetch('/static/json/posts.json')
+			.then(r => {
+				return r.json()
+			})
+			.then(feed => {
+				this.setState({ feed })
+				let post = feed.find(p => p.slug === props.query.slug)
+				post && this.setState({ post })
+			})
+			.catch(err => console.warn(err))
+	}
 
-  render() {
-    return (
-      <main className="Post">
-        <Header page="Post" />
-        {(this.state && this.state.post) && (
-          <div>
-            <Head>
-              <meta charset="UTF-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              <title>{this.state.post && this.state.post.title}</title>
-            </Head>
-            <div className="wrapper">
-              <header className="header">
-                <h4 className="postDate">Published: {`${this.state.post.day} of ${this.state.post.month}, ${this.state.post.year}`}.</h4>
-                <h2 className="postTitle">{this.state.post.title}</h2>
-              </header>
-              <PostRenderer post={this.state.post} />
-              <section className="section">
-                <h4 className="postTags">Tags:</h4><br/>
-                {(this.state && this.state.post && this.state.post.tags) && this.state.post.tags.map((tag, index) => (
-                  <Link key={index} href="/blog/tags"><a className="tag">{tag}</a></Link>
-                ))}
-              </section>
-            </div>
-          </div>
-        )}
-        { !this.state && (
-          <div className="loading">🕐</div>
-        )}
-        <style jsx>{`
+	render() {
+		return (
+			<main className="Post">
+				<Header page="Post" />
+				{this.state &&
+					this.state.post &&
+					<div>
+						<Head>
+							<meta charset="UTF-8" />
+							<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+							<title>{this.state.post && this.state.post.title}</title>
+						</Head>
+						<div className="wrapper">
+							<header className="head">
+								<h4 className="postDate">
+									Published: {`${this.state.post.day} of ${this.state.post.month}, ${this.state.post.year}`}.
+								</h4>
+								<h2 className="postTitle">{this.state.post.title}</h2>
+							</header>
+							<PostRenderer post={this.state.post} />
+							<section className="section">
+								<h4 className="postTags">Tags:</h4><br />
+								{this.state &&
+									this.state.post &&
+									this.state.post.tags &&
+									this.state.post.tags.map((tag, index) =>
+										<Link key={index} href="/blog/tags"><a className="tag">{tag}</a></Link>,
+									)}
+							</section>
+						</div>
+					</div>}
+				{!this.state && <div className="loading">🕐</div>}
+				<style jsx>{`
           .wrapper {
             margin-top: 3rem;
             max-width: var(--width, 45rem);
@@ -65,7 +71,7 @@ export default class extends Component {
             margin-right: auto;
           }
 
-          .header,
+          .head,
           .section {
             margin-left: 1rem;
             margin-right: 1rem;
@@ -74,7 +80,7 @@ export default class extends Component {
             margin-bottom: 3rem;
           }
           @media screen and (min-width: 45rem) {
-            .header,
+            .head,
             .section {
               margin-left: 0;
               margin-right: 0;
@@ -123,7 +129,7 @@ export default class extends Component {
             }
           }
         `}</style>
-      </main>
-    )
-  }
-};
+			</main>
+		)
+	}
+}
