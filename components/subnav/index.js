@@ -1,12 +1,12 @@
-import React from 'react';
-import Link from 'next/link';
+import React from 'react'
+import Link from 'next/link'
 
-const Subnav = ({page}) => (
-  <nav className="subnav">
-    <Link href="/blog" ><a className={page === 'blog' ? 'subnav__link is-active' : 'subnav__link'}>Blog</a></Link>
-    <Link href="/blog/feed"><a className={page === 'feed' ? 'subnav__link is-active' : 'subnav__link'}>Feed</a></Link>
-    <Link href="/blog/tags"><a className={page === 'tags' ? 'subnav__link is-active' : 'subnav__link'}>Tags</a></Link>
-    <style jsx>{`
+const Subnav = ({ page }) =>
+	<nav className="subnav">
+		<Link href="/blog"><a className={page === 'blog' ? 'subnav__link is-active' : 'subnav__link'}>Blog</a></Link>
+		<Link href="/blog/feed"><a className={page === 'feed' ? 'subnav__link is-active' : 'subnav__link'}>Feed</a></Link>
+		<Link href="/blog/tags"><a className={page === 'tags' ? 'subnav__link is-active' : 'subnav__link'}>Tags</a></Link>
+		<style jsx>{`
       .subnav {
         max-width: var(--width);
         margin: 0 auto 10rem;
@@ -38,7 +38,6 @@ const Subnav = ({page}) => (
       }
 
     `}</style>
-  </nav>
-);
+	</nav>
 
-export default Subnav;
+export default Subnav

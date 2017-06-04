@@ -1,50 +1,54 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 import Router from 'next/router'
-import 'whatwg-fetch';
+import 'whatwg-fetch'
 
-import * as hljs from 'highlight.js';
+import * as hljs from 'highlight.js'
 var md = require('markdown-it')({
-  html: true,
-  linkify: true,
-  typographer: true,
-  highlight: function (str, lang) {
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return `<pre class="hljs"><code data-lang="${lang}">${hljs.highlight(lang, str, true).value}</code></pre>`;
-      } catch (__) {}
-    }
-    return `<pre class="hljs"><code data-lang="${lang}">${md.utils.escapeHtml(str)}</code></pre>`;
-  }
-}).use(require('markdown-it-footnote'))
-.use(require('markdown-it-deflist'))
-.use(require('markdown-it-inline-comments'));
+	html: true,
+	linkify: true,
+	typographer: true,
+	highlight: function(str, lang) {
+		if (lang && hljs.getLanguage(lang)) {
+			try {
+				return `<pre class="hljs"><code data-lang="${lang}">${hljs.highlight(lang, str, true).value}</code></pre>`
+			} catch (__) {}
+		}
+		return `<pre class="hljs"><code data-lang="${lang}">${md.utils.escapeHtml(str)}</code></pre>`
+	},
+})
+	.use(require('markdown-it-footnote'))
+	.use(require('markdown-it-deflist'))
+	.use(require('markdown-it-inline-comments'))
 
 class PostRenderer extends Component {
-  state = {
-    loading: true,
-    markdown: '',
-    error: false
-  }
-  componentDidMount() {
-    let postUrl = `/static/raw/${this.props.post.year}/${this.props.post.month}/${this.props.post.content}.md`;
-    fetch(postUrl).then(data => {
-      return data.text();
-    }).then(md => {
-      if (md.includes('<!DOCTYPE html>')) {
-        Router.push('/blog');
-      }
-      this.setState({
-        loading: false,
-        markdown: md
-      });
-    }).catch(err => console.warn(err));
-  }
-  render() {
-    return (
-      <div>
-        {this.state.error && (<h1 className="error">{this.state.error}</h1>)}
-        <article className="article" dangerouslySetInnerHTML={{ __html: md.render(this.state.markdown) }}></article>
-        <style jsx global>{`
+	state = {
+		loading: true,
+		markdown: '',
+		error: false,
+	}
+	componentDidMount() {
+		let postUrl = `/static/raw/${this.props.post.year}/${this.props.post.month}/${this.props.post.content}.md`
+		fetch(postUrl)
+			.then(data => {
+				return data.text()
+			})
+			.then(md => {
+				if (md.includes('<!DOCTYPE html>')) {
+					Router.push('/blog')
+				}
+				this.setState({
+					loading: false,
+					markdown: md,
+				})
+			})
+			.catch(err => console.warn(err))
+	}
+	render() {
+		return (
+			<div>
+				{this.state.error && <h1 className="error">{this.state.error}</h1>}
+				<article className="article" dangerouslySetInnerHTML={{ __html: md.render(this.state.markdown) }} />
+				<style jsx global>{`
           .article {
             font-size: 1.05rem;
             line-height: 1.6;
@@ -185,9 +189,9 @@ class PostRenderer extends Component {
           }
 
         `}</style>
-      </div>
-    )
-  }
-};
+			</div>
+		)
+	}
+}
 
-export default PostRenderer;
+export default PostRenderer

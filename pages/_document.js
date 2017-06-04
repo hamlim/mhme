@@ -1,39 +1,41 @@
-import React from 'react';
-import Document, { Head, Main, NextScript } from 'next/document';
-import flush from 'styled-jsx/server';
-import color from 'css-color-function';
+import React from 'react'
+import Document, { Head, Main, NextScript } from 'next/document'
+import flush from 'styled-jsx/server'
+import colors from '../styles/colors'
 
 export default class MyDocument extends Document {
-  static getInitialProps ({ renderPage }) {
-    const {html, head} = renderPage()
-    const styles = flush()
-    return { html, head, styles }
-  }
-  render () {
-    return (
-      <html>
-        <Head>
-         <meta charset="UTF-8" />
-         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-         <link rel="stylesheet" href="/static/src/hljs-ocean.css" />
-         <style>{`
+	static getInitialProps({ renderPage }) {
+		const { html, head } = renderPage()
+		const styles = flush()
+		return { html, head, styles }
+	}
+	render() {
+		return (
+			<html>
+				<Head>
+					<meta charset="UTF-8" />
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+					<link rel="stylesheet" href="/static/src/hljs-ocean.css" />
+					<link rel="stylesheet" href="/static/src/tachyons.min.css" />
+					<style>
+						{`
            :root {
-            --a: #F08080;
-            --a-muted: #FFA07A;
-            --b: #4169E1;
-            --b-muted: ${color.convert('color(#4169E1 lightness(+ 15%))')};
-            --c: springgreen;
-            --c-muted: ${color.convert('color(springgreen lightness(+ 25%))')};
+            --a: ${colors.a};
+            --a-muted: ${colors.aMuted};
+            --b: ${colors.b};
+            --b-muted: ${colors.bMuted};
+            --c: ${colors.c};
+            --c-muted: ${colors.cMuted};
 
-            --d: #1abc9c;
-            --d-muted: #9DE2D5;
+            --d: ${colors.d};
+            --d-muted: ${colors.dMuted};
 
 
-            --gray: #566573;
-            --gray-muted: #D5D8DC;
-            --light-gray: ${color.convert('color(#FFFFFF shade(8%))')};
-            --white: #FEFEFE;
-            --black: #0f0f0f;
+            --gray: ${colors.gray};
+            --gray-muted: ${colors.grayMuted};
+            --light-gray: ${colors.lightGray};
+            --white: ${colors.white};
+            --black: ${colors.black};
 
             --fonts: -apple-system,
                       BlinkMacSystemFont,
@@ -60,16 +62,13 @@ export default class MyDocument extends Document {
             font-size: var(--font-size);
             transition: background-color 1s, color 1s;
           }`}
-        </style>
-       </Head>
-       <body>
-         <Main />
-         <NextScript />
-         <script type="text/javascript">
-           {`console.log('test');`}
-         </script>
-       </body>
-     </html>
-    )
-  }
+					</style>
+				</Head>
+				<body>
+					<Main />
+					<NextScript />
+				</body>
+			</html>
+		)
+	}
 }

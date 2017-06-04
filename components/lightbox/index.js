@@ -1,44 +1,44 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
 
 export default class extends Component {
-  state = {
-    loadHighRes: false
-  }
-  componentDidMount() {
-    this.setState({
-      loadHighRes: true
-    });
-  }
-  render() {
-    let {images} = this.props;
-    let thumbnails = images.map((image, index) => (
-      <div className="lightboxcontent" key={index}>
-        <h4 className="h4">{image.title}</h4>
-        <p>{image.text}</p>
-        <figure className="lightboxwrapper">
-          <a href={"#LB_target_" + index} className="escape">
-            <img id={"LB_" + index} src={image.lowres} alt={image.caption} className="lightboximage" />
-          </a>
-          <figcaption className="lightboxcaption">{image.caption}</figcaption>
-        </figure>
-      </div>
-    ));
-    return (
-      <section className="lightboxComponent">
-        {thumbnails}
-        {this.state && this.state.loadHighRes ? (
-          <section>
-            {images.map((image, index) => (
-              <a href={"#LB_" + index} className="lightboxtargetWrapper escape" id={"LB_target_" + index} key={index}>
-                <figure className="lightboxtarge">
-                  <img src={image.img} alt={image.caption} className="lightboxtargetImg" />
-                  <figcaption className="lightboxtargetCaption">{image.caption}</figcaption>
-                </figure>
-              </a>
-            ))}
-          </section>
-        ) : null}
-        <style jsx global>{`
+	state = {
+		loadHighRes: false,
+	}
+	componentDidMount() {
+		this.setState({
+			loadHighRes: true,
+		})
+	}
+	render() {
+		let { images } = this.props
+		let thumbnails = images.map((image, index) =>
+			<div className="lightboxcontent" key={index}>
+				<h4 className="h4">{image.title}</h4>
+				<p>{image.text}</p>
+				<figure className="lightboxwrapper">
+					<a href={'#LB_target_' + index} className="escape">
+						<img id={'LB_' + index} src={image.lowres} alt={image.caption} className="lightboximage" />
+					</a>
+					<figcaption className="lightboxcaption">{image.caption}</figcaption>
+				</figure>
+			</div>,
+		)
+		return (
+			<section className="lightboxComponent">
+				{thumbnails}
+				{this.state && this.state.loadHighRes
+					? <section>
+							{images.map((image, index) =>
+								<a href={'#LB_' + index} className="lightboxtargetWrapper escape" id={'LB_target_' + index} key={index}>
+									<figure className="lightboxtarge">
+										<img src={image.img} alt={image.caption} className="lightboxtargetImg" />
+										<figcaption className="lightboxtargetCaption">{image.caption}</figcaption>
+									</figure>
+								</a>,
+							)}
+						</section>
+					: null}
+				<style jsx global>{`
 
           .h4 {
             text-decoration: underline;
@@ -129,7 +129,7 @@ export default class extends Component {
             }
           }
         `}</style>
-      </section>
-    )
-  }
+			</section>
+		)
+	}
 }

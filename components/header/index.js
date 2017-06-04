@@ -1,21 +1,43 @@
-import React from 'react';
-import Link from 'next/link';
-const Header = ({activePage}) => (
-  <header className="header">
-    <h1><Link href="/"><a className="name">Matt Hamlin</a></Link></h1>
-    <nav className="header__nav">
-      <ul className="header__list">
-        <li><Link href="/blog" prefetch><a className={activePage === "blog" ? "header__link is-active" : "header__link"}>Blog</a></Link></li>
-        {/*<li><Link href="/stories" prefetch><a className={activePage === "stories" ? "header__link is-active" : "header__link"}>Stories</a></Link></li>*/}
-        <li><Link href="/projects" prefetch><a className={activePage === "projects" ? "header__link is-active" : "header__link"}>Projects</a></Link></li>
-        <li><Link href="/travel" prefetch><a className={activePage === "travel" ? "header__link is-active" : "header__link"}>Travel</a></Link></li>
-      </ul>
-    </nav>
-    <style jsx>{`
+import React from 'react'
+import Link from 'next/link'
+
+const activeLinkClass = 'header__link no-underline black f4 green'
+const linkClass = 'header__link no-underline black f4'
+
+const Anchor = ({ active, children, href }) =>
+	<a href={href} className={active ? activeLinkClass : linkClass}>{children}</a>
+
+const Header = ({ activePage }) =>
+	<header className="header flex-row justify-around items-center">
+		<h1><Link href="/"><a className="f2 no-underline black">Matt Hamlin</a></Link></h1>
+		<nav className="header__nav">
+			<ul className="header__list list flex-row justify-between items-center">
+				<li>
+					<Link href="/blog" prefetch>
+						<Anchor active={activePage === 'blog'} href="/blog">
+							Blog
+						</Anchor>
+					</Link>
+				</li>
+				<li>
+					<Link href="/projects" prefetch>
+						<Anchor active={activePage === 'projects'} href="/projects">
+							Projects
+						</Anchor>
+					</Link>
+				</li>
+				<li>
+					<Link href="/travel" prefetch>
+						<Anchor active={activePage === 'travel'} href="/travel">
+							Travel
+						</Anchor>
+					</Link>
+				</li>
+			</ul>
+		</nav>
+		<style jsx global>
+			{`
       .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
         height: 10rem;
 
         display: grid;
@@ -23,25 +45,6 @@ const Header = ({activePage}) => (
 
         max-width: var(--width);
         margin: auto;
-      }
-      .name {
-        font-size: 3rem;
-        text-decoration: none;
-        color: var(--black);
-      }
-
-      .header__link {
-        text-decoration: none;
-        color: black;
-        font-size: 1.8rem;
-      }
-      .header__link.is-active {
-        color: var(--c);
-      }
-      .header__link.is-active:hover,
-      .header__link.is-active:focus {
-        text-decoration: underline;
-        color: var(--a);
       }
 
       .header__link:hover,
@@ -52,12 +55,6 @@ const Header = ({activePage}) => (
         color: var(--a);
       }
 
-      .header__list {
-        list-style: none;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-      }
       .header__list > li {
         display: inline-block;
       }
@@ -74,8 +71,7 @@ const Header = ({activePage}) => (
         }
       }
     `}
-    </style>
-  </header>
-);
+		</style>
+	</header>
 
-export default Header;
+export default Header
