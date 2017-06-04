@@ -57,8 +57,7 @@ var MyDocument = function (_Document) {
   (0, _createClass3.default)(MyDocument, [{
     key: 'render',
     value: function render() {
-      return _react2.default.createElement('html', {
-        __source: {
+      return _react2.default.createElement('html', { className: 'avenir', __source: {
           fileName: _jsxFileName,
           lineNumber: 14
         }
