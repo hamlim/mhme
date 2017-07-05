@@ -14,6 +14,7 @@ export default class MyDocument extends Document {
 			<html className="avenir">
 				<Head>
 					<meta charset="UTF-8" />
+					<meta name="theme-color" content={colors.a} />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<link rel="stylesheet" href="/static/src/hljs-ocean.css" />
 					<link rel="stylesheet" href="/static/src/tachyons.min.css" />
