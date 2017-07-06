@@ -4,6 +4,10 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends2 = require('babel-runtime/helpers/extends');
+
+var _extends3 = _interopRequireDefault(_extends2);
+
 var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
@@ -32,13 +36,11 @@ var _document = require('next/dist/server/document.js');
 
 var _document2 = _interopRequireDefault(_document);
 
-var _server = require('styled-jsx/server');
-
-var _server2 = _interopRequireDefault(_server);
-
 var _colors = require('../styles/colors');
 
 var _colors2 = _interopRequireDefault(_colors);
+
+var _server = require('emotion/server');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -91,20 +93,24 @@ var MyDocument = function (_Document) {
           fileName: _jsxFileName,
           lineNumber: 21
         }
-      }, '\n           :root {\n            --a: ' + _colors2.default.a + ';\n            --a-muted: ' + _colors2.default.aMuted + ';\n            --b: ' + _colors2.default.b + ';\n            --b-muted: ' + _colors2.default.bMuted + ';\n            --c: ' + _colors2.default.c + ';\n            --c-muted: ' + _colors2.default.cMuted + ';\n\n            --d: ' + _colors2.default.d + ';\n            --d-muted: ' + _colors2.default.dMuted + ';\n\n\n            --gray: ' + _colors2.default.gray + ';\n            --gray-muted: ' + _colors2.default.grayMuted + ';\n            --light-gray: ' + _colors2.default.lightGray + ';\n            --white: ' + _colors2.default.white + ';\n            --black: ' + _colors2.default.black + ';\n\n            --fonts: -apple-system,\n                      BlinkMacSystemFont,\n                      Roboto,\n                      Oxygen-Sans,\n                      Ubuntu,\n                      Cantarell,\n                      sans-serif;\n            --font-size: 18px;\n\n            --width: 45rem;\n            --width-s: 30rem;\n          }\n\n\n          *, *::after, *::before {\n            box-sizing: inherit;\n            margin: 0;\n            padding: 0;\n          }\n          html {\n            box-sizing: border-box;\n            font-family: var(--fonts);\n            font-size: var(--font-size);\n            transition: background-color 1s, color 1s;\n          }')), _react2.default.createElement('body', {
-        __source: {
+      }, '\n           :root {\n            --a: ' + _colors2.default.a + ';\n            --a-muted: ' + _colors2.default.aMuted + ';\n            --b: ' + _colors2.default.b + ';\n            --b-muted: ' + _colors2.default.bMuted + ';\n            --c: ' + _colors2.default.c + ';\n            --c-muted: ' + _colors2.default.cMuted + ';\n\n            --d: ' + _colors2.default.d + ';\n            --d-muted: ' + _colors2.default.dMuted + ';\n\n\n            --gray: ' + _colors2.default.gray + ';\n            --gray-muted: ' + _colors2.default.grayMuted + ';\n            --light-gray: ' + _colors2.default.lightGray + ';\n            --white: ' + _colors2.default.white + ';\n            --black: ' + _colors2.default.black + ';\n\n            --fonts: -apple-system,\n                      BlinkMacSystemFont,\n                      Roboto,\n                      Oxygen-Sans,\n                      Ubuntu,\n                      Cantarell,\n                      sans-serif;\n            --font-size: 18px;\n\n            --width: 45rem;\n            --width-s: 30rem;\n          }\n\n\n          *, *::after, *::before {\n            box-sizing: inherit;\n            margin: 0;\n            padding: 0;\n          }\n          html {\n            box-sizing: border-box;\n            font-family: var(--fonts);\n            font-size: var(--font-size);\n            transition: background-color 1s, color 1s;\n          }'), _react2.default.createElement('style', { dangerouslySetInnerHTML: { __html: this.props.css }, __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 67
         }
-      }, _react2.default.createElement(_document.Main, {
+      })), _react2.default.createElement('body', {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 69
         }
-      }), _react2.default.createElement(_document.NextScript, {
+      }, _react2.default.createElement(_document.Main, {
         __source: {
           fileName: _jsxFileName,
           lineNumber: 70
+        }
+      }), _react2.default.createElement(_document.NextScript, {
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71
         }
       })));
     }
@@ -117,8 +123,8 @@ var MyDocument = function (_Document) {
           html = _renderPage.html,
           head = _renderPage.head;
 
-      var styles = (0, _server2.default)();
-      return { html: html, head: head, styles: styles };
+      var emotionStyles = (0, _server.extractCritical)(html);
+      return (0, _extends3.default)({ html: html, head: head }, emotionStyles);
     }
   }]);
 

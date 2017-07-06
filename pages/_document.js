@@ -1,25 +1,25 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
-import flush from 'styled-jsx/server'
 import colors from '../styles/colors'
+import { extractCritical } from 'emotion/server'
 
 export default class MyDocument extends Document {
-	static getInitialProps({ renderPage }) {
-		const { html, head } = renderPage()
-		const styles = flush()
-		return { html, head, styles }
-	}
-	render() {
-		return (
-			<html className="avenir">
-				<Head>
-					<meta charset="UTF-8" />
-					<meta name="theme-color" content={colors.a} />
-					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-					<link rel="stylesheet" href="/static/src/hljs-ocean.css" />
-					<link rel="stylesheet" href="/static/src/tachyons.min.css" />
-					<style>
-						{`
+  static getInitialProps({ renderPage }) {
+    const { html, head } = renderPage()
+    const emotionStyles = extractCritical(html)
+    return { html, head, ...emotionStyles }
+  }
+  render() {
+    return (
+      <html className="avenir">
+        <Head>
+          <meta charset="UTF-8" />
+          <meta name="theme-color" content={colors.a} />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <link rel="stylesheet" href="/static/src/hljs-ocean.css" />
+          <link rel="stylesheet" href="/static/src/tachyons.min.css" />
+          <style>
+            {`
            :root {
             --a: ${colors.a};
             --a-muted: ${colors.aMuted};
@@ -63,13 +63,14 @@ export default class MyDocument extends Document {
             font-size: var(--font-size);
             transition: background-color 1s, color 1s;
           }`}
-					</style>
-				</Head>
-				<body>
-					<Main />
-					<NextScript />
-				</body>
-			</html>
-		)
-	}
+          </style>
+          <style dangerouslySetInnerHTML={{ __html: this.props.css }} />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </html>
+    )
+  }
 }
