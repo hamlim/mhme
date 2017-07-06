@@ -1,10 +1,21 @@
-import React from 'react';
-import Link from 'next/link';
-import Head from 'next/head';
-import Header from '../components/header';
-import Subnav from '../components/subnav';
+import React from 'react'
+import Link from 'next/link'
+import Head from 'next/head'
+import Header from '../components/header'
+import Subnav from '../components/subnav'
+import styled from 'emotion/react'
 
-export default () => (
+const Wrapper = styled.article`
+  margin: 3rem auto 6rem;
+  max-width: var(--width);
+`
+
+const StyledLink = styled.a`
+  color: var(--a, #f08080);
+  text-decoration: none;
+`
+
+export default () =>
   <main className="blog">
     <Head>
       <meta charset="UTF-8" />
@@ -13,25 +24,14 @@ export default () => (
     </Head>
     <Header activePage="blog" />
     <Subnav page="Blog" />
-    <article className="wrapper">
+    <Wrapper>
       <section>
         <h2>
-          Welcome to my blog. I write about a lot of different things, I suggest checking out my
-          {' '}
-          <Link href="/blog/tags"><a className="link">tags</a></Link>
-          .
+          Welcome to my blog. I write about a lot of different things, I suggest checking out my{' '}
+          <Link href="/blog/tags">
+            <StyledLink>tags</StyledLink>
+          </Link>.
         </h2>
       </section>
-    </article>
-    <style jsx>{`
-      .wrapper {
-        margin: 3rem auto 6rem;
-        max-width: var(--width);
-      }
-      .link {
-        color: var(--a, #F08080);
-        text-decoration: none;
-      }
-    `}</style>
+    </Wrapper>
   </main>
-);
