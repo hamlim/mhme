@@ -50,6 +50,12 @@ export default () =>
       <ul css={`list-style: none;`}>
         <Project>
           <h4>
+            <StyledLink href="https://htmlcolors.now.sh/">HTML Colors</StyledLink>
+          </h4>
+          <Description>A list of all the HTML named colors, with links for generating a color palette.</Description>
+        </Project>
+        <Project>
+          <h4>
             <StyledLink href="http://matthamlin.me/bookmarkbot">Bookmark Bot</StyledLink>
           </h4>
           <Description>A quick and dirty way to save tweets for later by DMing links to a Twitter account.</Description>
