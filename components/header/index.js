@@ -21,7 +21,7 @@ const Anchor = ({ active, children, href }) =>
   </a>
 
 const header = css`
-	background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
