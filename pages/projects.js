@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Header from '../components/header'
 import { css, keyframes } from 'emotion'
 import styled from 'emotion/react'
+import Bookmarkbot from './bookmarkbot'
 
 const Wrapper = styled.article`
   margin: 1rem;
@@ -47,6 +48,12 @@ export default () =>
     <Wrapper>
       <Title>My Projects</Title>
       <ul css={`list-style: none;`}>
+        <Project>
+          <h4>
+            <StyledLink href="http://matthamlin.me/bookmarkbot">Bookmark Bot</StyledLink>
+          </h4>
+          <Description>A quick and dirty way to save tweets for later by DMing links to a Twitter account.</Description>
+        </Project>
         <Project>
           <h4>
             <StyledLink href="http://bombsweeper.now.sh/">Bombsweeper</StyledLink>
