@@ -11,12 +11,12 @@ const Container = styled.div`
 `
 
 const nestedCopySelector = css`
-	& > * + * {
-		margin-top: 1.5rem;
-	}
+  & > * + * {
+    margin-top: 1.5rem;
+  }
 `
 
-export default _ =>
+export default _ => (
   <main className="avenir">
     <Head>
       <meta charset="UTF-8" />
@@ -28,8 +28,8 @@ export default _ =>
       <header className="lh-title">
         <h1>The Mental Model of Component Based CSS</h1>
         <p>
-          This post is partially for me to rethink the role and proper architecture of css inside a component model, as
-          well as a way to present this information to my coworkers.
+          ⚠️ Note: Still in Progress ⚠️ This post is partially for me to rethink the role and proper architecture of css
+          inside a component model, as well as a way to present this information to my coworkers.
         </p>
       </header>
       <article className="lh-copy">
@@ -56,3 +56,4 @@ export default _ =>
       </article>
     </Container>
   </main>
+)
