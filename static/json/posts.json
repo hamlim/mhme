@@ -1,5 +1,16 @@
 [
   {
+    "slug": "The-mental-model-of-css-with-components",
+    "title": "The Mental model of Component based CSS",
+    "tags": ["Daily", "Development"],
+    "month": "July",
+    "year": "2017",
+    "day": "19th",
+    "content": "The-mental-model-of-css-with-components",
+    "lede": "What should css look like in the world of components",
+    "route": "/posts/The-mental-model-of-css-with-components"
+  },
+  {
     "slug": "On-Projects",
     "title": "On Projects",
     "tags": ["Daily", "Development"],
