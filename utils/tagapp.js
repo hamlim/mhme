@@ -1,10 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 
-import styled from 'emotion/react'
+import styled from 'react-emotion'
 
-const Wrap = styled.section`margin-top: 3rem;`
-const StyledLink = styled.a`color: var(--a, #f08080);`
+const Wrap = styled.section`
+  margin-top: 3rem;
+`
+const StyledLink = styled.a`
+  color: var(--a, #f08080);
+`
 const Header = styled.header`
   text-decoration: underline;
   font-size: 1.35rem;
@@ -32,17 +36,13 @@ const TagApp = ({ feed }) => {
       {tagArr.map((tag, index) => {
         return (
           <List key={index}>
-            <Header id={tag.toLowerCase()}>
-              {tag}
-            </Header>
+            <Header id={tag.toLowerCase()}>{tag}</Header>
             {feed.map((post, index) => {
               if (post.hasOwnProperty('tags') && post.tags.includes(tag)) {
                 return (
                   <li key={index}>
                     <Link href={post.route ? post.route : { pathname: '/blog/post', query: { slug: `${post.slug}` } }}>
-                      <StyledLink>
-                        {post.title}
-                      </StyledLink>
+                      <StyledLink>{post.title}</StyledLink>
                     </Link>
                   </li>
                 )

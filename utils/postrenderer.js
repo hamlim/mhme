@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Router from 'next/router'
 import 'whatwg-fetch'
 
-import { injectGlobal } from 'emotion'
+import { injectGlobal } from 'react-emotion'
 
 import * as hljs from 'highlight.js'
 var md = require('markdown-it')({
@@ -186,14 +186,12 @@ class PostRenderer extends Component {
       }
     `
   }
-  render = () =>
+  render = () => (
     <div>
-      {this.state.error &&
-        <h1 className="error">
-          {this.state.error}
-        </h1>}
+      {this.state.error && <h1 className="error">{this.state.error}</h1>}
       <article className="article" dangerouslySetInnerHTML={{ __html: md.render(this.state.markdown) }} />
     </div>
+  )
 }
 
 export default PostRenderer

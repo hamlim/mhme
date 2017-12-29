@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-import styled from 'emotion/react'
+import styled from 'react-emotion'
 
 const PostCard = styled.div`
   margin: 0 auto;
@@ -17,8 +17,7 @@ const PostCard = styled.div`
 const StyledLink = styled.a`
   color: var(--a, #f08080);
   text-decoration: none;
-  &:hover > ${PostCard},
-  &:focus > ${PostCard} {
+  &:hover > ${PostCard}, &:focus > ${PostCard} {
     box-shadow: 0 0 1em 0 var(--b, #4169e1);
   }
 `
@@ -42,32 +41,29 @@ const PostTitle = styled.h4`
 
 const PostLede = styled.p`
   font-size: 1.25rem;
-  margin: .5em 0;
+  margin: 0.5em 0;
 `
 
-const PostTime = styled.p`color: var(--b-muted);`
+const PostTime = styled.p`
+  color: var(--b-muted);
+`
 
-export default ({ feed }) =>
+export default ({ feed }) => (
   <section className="wrap">
     <List>
-      {feed.map((post, index) =>
+      {feed.map((post, index) => (
         <li key={index}>
           <Link href={post.route ? post.route : { pathname: '/blog/post', query: { slug: `${post.slug}` } }}>
             <StyledLink>
               <PostCard>
-                <PostTitle>
-                  {post.title}
-                </PostTitle>
-                <PostLede>
-                  {post.lede && post.lede.substring(0, 65) + '...'}
-                </PostLede>
-                <PostTime>
-                  Publication Date: {`${post.day} of ${post.month}, ${post.year}`}
-                </PostTime>
+                <PostTitle>{post.title}</PostTitle>
+                <PostLede>{post.lede && post.lede.substring(0, 65) + '...'}</PostLede>
+                <PostTime>Publication Date: {`${post.day} of ${post.month}, ${post.year}`}</PostTime>
               </PostCard>
             </StyledLink>
           </Link>
-        </li>,
-      )}
+        </li>
+      ))}
     </List>
   </section>
+)
