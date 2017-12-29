@@ -4,8 +4,7 @@ import Head from 'next/head'
 import Header from '../../components/header'
 import Subnav from '../../components/subnav'
 import TagApp from '../../utils/tagapp'
-import styled from 'emotion/react'
-import { css, keyframes } from 'emotion'
+import styled, { css, keyframes } from 'react-emotion'
 
 const Wrapper = styled.article`
   margin-top: 3rem;
@@ -13,7 +12,7 @@ const Wrapper = styled.article`
   margin-left: auto;
   margin-right: auto;
   @media screen and (max-width: 40rem) {
-    margin: 3rem .25em;
+    margin: 3rem 0.25em;
   }
 `
 

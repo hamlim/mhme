@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import Head from 'next/head'
 import Header from '../../components/header'
 
-import { css } from 'emotion'
+import { css } from 'react-emotion'
 
 const nestedCopySelector = css`
-	& > * + * {
-		margin-top: 1.5rem;
-	}
+  & > * + * {
+    margin-top: 1.5rem;
+  }
 `
 
-export default _ =>
+export default _ => (
   <main className="mh3 mw7 center-ns avenir">
     <Head>
       <meta charset="UTF-8" />
@@ -81,7 +81,12 @@ export default _ =>
           have a solid ending yet for this blog post. And since I would rather push it out in its current state then let
           it sit here in my editor and collect digital dust I will leave you the reader with this:
         </p>
-        <ul className="mb7" css={`list-style-position: inside;`}>
+        <ul
+          className="mb7"
+          css={`
+            list-style-position: inside;
+          `}
+        >
           <li>Be careful with your time management</li>
           <li>Work on things that interest you truly, not just things that are the new hot shit</li>
           <li>Taking breaks is always ok. 👌🏼</li>
@@ -89,3 +94,4 @@ export default _ =>
       </section>
     </article>
   </main>
+)

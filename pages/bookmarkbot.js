@@ -1,8 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 import Header from '../components/header'
-import styled from 'emotion/react'
-import { keyframes } from 'emotion'
+
+import styled, { keyframes } from 'react-emotion'
 
 const Container = styled.section`
   max-width: 95vw;
@@ -22,7 +22,9 @@ const Copy = styled.p`
   margin: 1rem 0;
 `
 
-const Link = styled.a`color: var(--a);`
+const Link = styled.a`
+  color: var(--a);
+`
 
 const Image = styled.img`
   max-height: 45rem;
@@ -37,9 +39,11 @@ const Flex = styled.div`
   align-items: center;
 `
 
-const Spacer = styled.div`height: 3rem;`
+const Spacer = styled.div`
+  height: 3rem;
+`
 
-export default () =>
+export default () => (
   <main>
     <Head>
       <meta charset="UTF-8" />
@@ -81,3 +85,4 @@ export default () =>
       </Copy>
     </Container>
   </main>
+)

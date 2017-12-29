@@ -2,8 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Header from '../components/header'
-import { css, keyframes } from 'emotion'
-import styled from 'emotion/react'
+import styled, { css, keyframes } from 'react-emotion'
 import Bookmarkbot from './bookmarkbot'
 
 const Wrapper = styled.article`
@@ -37,7 +36,7 @@ const Project = styled.li`
   border-radius: 1em;
 `
 
-export default () =>
+export default () => (
   <main className="Projects">
     <Head>
       <meta charset="UTF-8" />
@@ -47,7 +46,11 @@ export default () =>
     <Header activePage="projects" />
     <Wrapper>
       <Title>My Projects</Title>
-      <ul css={`list-style: none;`}>
+      <ul
+        css={`
+          list-style: none;
+        `}
+      >
         <Project>
           <h4>
             <StyledLink href="https://htmlcolors.now.sh/">HTML Colors</StyledLink>
@@ -74,9 +77,10 @@ export default () =>
             <StyledLink href="https://todometer-web.xyz/">Todometer Web</StyledLink>
           </h4>
           <Description>
-            I found this really awesome open source electron-based todo app called Todometer (<StyledLink href="https://cassidoo.github.io/todometer/">link here</StyledLink>)
-            and decided to try and recreate its entire functionality on the web using Next.js and other bits and piece
-            of React.
+            I found this really awesome open source electron-based todo app called Todometer (<StyledLink href="https://cassidoo.github.io/todometer/">
+              link here
+            </StyledLink>) and decided to try and recreate its entire functionality on the web using Next.js and other
+            bits and piece of React.
           </Description>
         </Project>
         <Project>
@@ -145,3 +149,4 @@ export default () =>
       </ul>
     </Wrapper>
   </main>
+)

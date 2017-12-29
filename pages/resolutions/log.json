@@ -1,0 +1,40 @@
+{
+  "resolutions": [
+    {
+      "title": "Get in Shape",
+      "priority": 1,
+      "description":
+        "Need to track my health and get in shape. I packed on several pounds in 2017 and I aim to lose a decent amount of weight."
+    },
+    {
+      "title": "Learn Flow-typed and Reason",
+      "priority": 2,
+      "description":
+        "I shied away from Flow and Reason in 2017 because of a lack of understanding behind why one would use them over Javascript. So 2018 will be the year for experimenting with these new tools."
+    },
+    {
+      "title": "Work on More Side Projects",
+      "priority": 3,
+      "description":
+        "This one is fairly self explanatory, I want to get into the habit of working on my side projects each free night instead of just consuming content."
+    },
+    {
+      "title": "Travel More",
+      "priority": 4,
+      "description":
+        "I generally travel twice a year now-a-days, however I want to spend the majority of that time out and about visiting new places. I also want to get out and about in Boston more often as well."
+    },
+    {
+      "title": "Capture More",
+      "priority": 5,
+      "description":
+        "I have one of the best cameras I will ever own attached to my phone. I want to get out more and start taking more photos and videos of the world surrounding me."
+    },
+    {
+      "title": "Improve my Personal Site",
+      "priority": 6,
+      "description":
+        "I want to both make my current personal site more professional as well as more creative and a better place to document my life (maybe migrating this website to it) and also build a place to share my photography as well."
+    }
+  ]
+}

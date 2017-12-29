@@ -5,8 +5,7 @@ import Link from 'next/link'
 import 'whatwg-fetch'
 import Header from '../../components/header'
 import PostRenderer from '../../utils/postrenderer'
-import styled from 'emotion/react'
-import { css, keyframes } from 'emotion'
+import styled, { css, keyframes } from 'react-emotion'
 import color from 'css-color-function'
 
 const headAndSection = css`
@@ -35,7 +34,7 @@ const Wrapper = styled.article`
 
 const Tag = styled.a`
   background-color: var(--d);
-  padding: .25em;
+  padding: 0.25em;
   border-radius: 4px;
   margin: 0 1em;
   color: var(--white);
@@ -62,14 +61,16 @@ const Loading = styled.div`
 
 const postTagsAndDate = css`
   color: ${color.convert('color(#0f0f0f lightness(+ 35%))')};
-  margin: 1rem 0 .5rem;
+  margin: 1rem 0 0.5rem;
 `
 const postTags = css`
   composes: ${postTagsAndDate};
   display: inline-block;
 `
 
-const postDate = css`composes: ${postTagsAndDate};`
+const postDate = css`
+  composes: ${postTagsAndDate};
+`
 
 export default class extends Component {
   static async getInitialProps({ pathname, query }) {
@@ -96,43 +97,45 @@ export default class extends Component {
       .catch(err => console.warn(err))
   }
 
-  render = () =>
+  render = () => (
     <main>
       <Header page="Post" />
       {this.state &&
-        this.state.post &&
-        <div>
-          <Head>
-            <title>
-              {this.state.post && this.state.post.title}
-            </title>
-          </Head>
-          <Wrapper>
-            <header className={head}>
-              <h4 className={postDate}>
-                Published: {`${this.state.post.day} of ${this.state.post.month}, ${this.state.post.year}`}.
-              </h4>
-              <h2 css={`font-size: 3rem;`}>
-                {this.state.post.title}
-              </h2>
-            </header>
-            <PostRenderer post={this.state.post} />
-            <section className={sectionClass}>
-              <h4 className={postTags}>Tags:</h4>
-              <br />
-              {this.state &&
-                this.state.post &&
-                this.state.post.tags &&
-                this.state.post.tags.map((tag, index) =>
-                  <Link key={index} href="/blog/tags">
-                    <Tag>
-                      {tag}
-                    </Tag>
-                  </Link>,
-                )}
-            </section>
-          </Wrapper>
-        </div>}
+        this.state.post && (
+          <div>
+            <Head>
+              <title>{this.state.post && this.state.post.title}</title>
+            </Head>
+            <Wrapper>
+              <header className={head}>
+                <h4 className={postDate}>
+                  Published: {`${this.state.post.day} of ${this.state.post.month}, ${this.state.post.year}`}.
+                </h4>
+                <h2
+                  css={`
+                    font-size: 3rem;
+                  `}
+                >
+                  {this.state.post.title}
+                </h2>
+              </header>
+              <PostRenderer post={this.state.post} />
+              <section className={sectionClass}>
+                <h4 className={postTags}>Tags:</h4>
+                <br />
+                {this.state &&
+                  this.state.post &&
+                  this.state.post.tags &&
+                  this.state.post.tags.map((tag, index) => (
+                    <Link key={index} href="/blog/tags">
+                      <Tag>{tag}</Tag>
+                    </Link>
+                  ))}
+              </section>
+            </Wrapper>
+          </div>
+        )}
       {!this.state && <Loading>🕐</Loading>}
     </main>
+  )
 }

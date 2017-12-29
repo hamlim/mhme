@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _emotion = require('emotion');
+
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
@@ -12,19 +14,15 @@ var _link = require('next/dist/lib/link.js');
 
 var _link2 = _interopRequireDefault(_link);
 
-var _emotion = require('emotion');
+var _reactEmotion = require('react-emotion');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = '/Users/matt/development/mhme/components/header/index.js';
 
 
-var linkClass = (0, _emotion.css)(['css-linkClass-12q7u5g'], [], function createEmotionRules() {
-  return ['.css-linkClass-12q7u5g { margin-left: .5rem;\n\tmargin-right: .5rem;\n\ttext-decoration: none;\n\tcolor: var(--black, black);\n\tfont-size: 1.25rem;\n\t-webkit-transition: color .15s ease-in;\n\ttransition: color .15s ease-in; }'];
-});
-var activeLinkClass = (0, _emotion.css)(['css-activeLinkClass-11ecy0r', linkClass], [], function createEmotionRules() {
-  return ['.css-activeLinkClass-11ecy0r {\n\tcolor: var(--green, #19a974); }'];
-});
+var linkClass = /*#__PURE__*/(0, _reactEmotion.css)('margin-left:0.5rem;margin-right:0.5rem;text-decoration:none;color:var(--black,black);font-size:1.25rem;transition:color 0.15s ease-in;');
+var activeLinkClass = /*#__PURE__*/(0, _reactEmotion.css)('composes:', linkClass, ';color:var(--green,#19a974);');
 
 var Anchor = function Anchor(_ref) {
   var active = _ref.active,
@@ -37,86 +35,89 @@ var Anchor = function Anchor(_ref) {
   }, children);
 };
 
-var header = (0, _emotion.css)(['css-header-97tsor'], [], function createEmotionRules() {
-  return ['.css-header-97tsor { background-image: -webkit-linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); background-image: -moz-linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%); background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);\n\tdisplay: -webkit-box;\n\tdisplay: -moz-box;\n\tdisplay: -ms-flexbox;\n\tdisplay: -webkit-flex;\n\tdisplay: flex;\n\t-webkit-flex-direction: column;\n\t-ms-flex-direction: column;\n\t-webkit-box-orient: vertical;\n\t-webkit-box-direction: normal;\n\tflex-direction: column;\n\t-webkit-justify-content: space-around;\n\t-ms-flex-pack: distribute;\n\t-webkit-box-pack: justify;\n\tjustify-content: space-around;\n\t-webkit-align-items: center;\n\t-ms-flex-align: center;\n\t-webkit-box-align: center;\n\talign-items: center; }', '@media screen and (min-width: 30em) {\n .css-header-97tsor { -webkit-flex-direction: row; -ms-flex-direction: row; -webkit-box-orient: horizontal; -webkit-box-direction: normal; flex-direction: row; } }'];
-});
-var headerLink = (0, _emotion.css)(['css-headerLink-19ebgu1'], [], function createEmotionRules() {
-  return ['.css-headerLink-19ebgu1 { font-size: 2.25rem;\n\ttext-decoration: none;\n\tcolor: var(--black, black); }'];
-});
-var dib = (0, _emotion.css)(['css-dib-tpaepq'], [], function createEmotionRules() {
-  return ['.css-dib-tpaepq { display: inline-block; }'];
-});
-var headerList = (0, _emotion.css)(['css-headerList-poaqwq'], [], function createEmotionRules() {
-  return ['.css-headerList-poaqwq { list-style-type: none;\n\tdisply: flex;\n\t-webkit-flex-direction: row;\n\t-ms-flex-direction: row;\n\t-webkit-box-orient: horizontal;\n\t-webkit-box-direction: normal;\n\tflex-direction: row;\n\t-webkit-justify-content: space-between;\n\t-ms-flex-pack: justify;\n\t-webkit-box-pack: justify;\n\tjustify-content: space-between;\n\t-webkit-align-items: center;\n\t-ms-flex-align: center;\n\t-webkit-box-align: center;\n\talign-items: center; }'];
-});
+var header = /*#__PURE__*/(0, _reactEmotion.css)('background-image:linear-gradient(120deg,#84fab0 0%,#8fd3f4 100%);display:flex;flex-direction:column;justify-content:space-around;align-items:center;@media screen and (min-width:30em){flex-direction:row;}');
+var headerLink = /*#__PURE__*/(0, _reactEmotion.css)('font-size:2.25rem;text-decoration:none;color:var(--black,black);');
+var dib = /*#__PURE__*/(0, _reactEmotion.css)('display:inline-block;');
+var headerList = /*#__PURE__*/(0, _reactEmotion.css)('list-style-type:none;disply:flex;flex-direction:row;justify-content:space-between;align-items:center;');
 
 var Header = function Header(_ref2) {
   var activePage = _ref2.activePage;
   return _react2.default.createElement('header', { className: header, __source: {
       fileName: _jsxFileName,
-      lineNumber: 48
+      lineNumber: 51
     }
   }, _react2.default.createElement('h1', { className: dib, __source: {
       fileName: _jsxFileName,
-      lineNumber: 49
+      lineNumber: 52
     }
   }, _react2.default.createElement(_link2.default, { href: '/', __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 53
     }
   }, _react2.default.createElement('a', { className: headerLink, __source: {
       fileName: _jsxFileName,
-      lineNumber: 51
-    }
-  }, 'Matt Hamlin'))), _react2.default.createElement('nav', {
-    className: (0, _emotion.css)(['css-Header-bsfl8r'], [], function createEmotionRules() {
-      return ['.css-Header-bsfl8r { margin-left: .5rem; }'];
-    }),
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 54
     }
-  }, _react2.default.createElement('ul', { className: headerList, __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    }
-  }, _react2.default.createElement('li', { className: dib, __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    }
-  }, _react2.default.createElement(_link2.default, { href: '/blog', prefetch: true, __source: {
+  }, 'Matt Hamlin'))), _react2.default.createElement('nav', {
+    className: /*#__PURE__*/(0, _emotion.css)('margin-left:0.5rem;'),
+    __source: {
       fileName: _jsxFileName,
       lineNumber: 57
     }
-  }, _react2.default.createElement(Anchor, { active: activePage === 'blog', href: '/blog', __source: {
+  }, _react2.default.createElement('ul', { className: headerList, __source: {
       fileName: _jsxFileName,
-      lineNumber: 58
+      lineNumber: 62
     }
-  }, '\u270D\uFE0F Blog'))), _react2.default.createElement('li', { className: dib, __source: {
+  }, _react2.default.createElement('li', { className: dib, __source: {
       fileName: _jsxFileName,
       lineNumber: 63
     }
-  }, _react2.default.createElement(_link2.default, { href: '/projects', prefetch: true, __source: {
+  }, _react2.default.createElement(_link2.default, { href: '/blog', prefetch: true, __source: {
       fileName: _jsxFileName,
       lineNumber: 64
     }
-  }, _react2.default.createElement(Anchor, { active: activePage === 'projects', href: '/projects', __source: {
+  }, _react2.default.createElement(Anchor, { active: activePage === 'blog', href: '/blog', __source: {
       fileName: _jsxFileName,
       lineNumber: 65
     }
-  }, '\u2728 Projects'))), _react2.default.createElement('li', { className: dib, __source: {
+  }, '\u270D\uFE0F Blog'))), _react2.default.createElement('li', { className: dib, __source: {
       fileName: _jsxFileName,
       lineNumber: 70
     }
-  }, _react2.default.createElement(_link2.default, { href: '/travel', prefetch: true, __source: {
+  }, _react2.default.createElement(_link2.default, { href: '/projects', prefetch: true, __source: {
       fileName: _jsxFileName,
       lineNumber: 71
     }
-  }, _react2.default.createElement(Anchor, { active: activePage === 'travel', href: '/travel', __source: {
+  }, _react2.default.createElement(Anchor, { active: activePage === 'projects', href: '/projects', __source: {
       fileName: _jsxFileName,
       lineNumber: 72
     }
-  }, '\u2708\uFE0F Travel'))))));
+  }, '\u2728 Projects'))), _react2.default.createElement('li', { className: dib, __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    }
+  }, _react2.default.createElement(_link2.default, { href: '/travel', prefetch: true, __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    }
+  }, _react2.default.createElement(Anchor, { active: activePage === 'travel', href: '/travel', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    }
+  }, '\u2708\uFE0F Travel'))), _react2.default.createElement('li', { className: dib, __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    }
+  }, _react2.default.createElement(_link2.default, { href: '/resolutions', prefetch: true, __source: {
+      fileName: _jsxFileName,
+      lineNumber: 85
+    }
+  }, _react2.default.createElement(Anchor, { active: activePage === 'resolutions', href: '/resolutions', __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86
+    }
+  }, '\uD83D\uDCD3\uFE0F 2018 Resolutions'))))));
 };
 
 exports.default = Header;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvaGVhZGVyL2luZGV4LmpzIl0sIm5hbWVzIjpbIlJlYWN0IiwiTGluayIsImNzcyIsImxpbmtDbGFzcyIsImFjdGl2ZUxpbmtDbGFzcyIsIkFuY2hvciIsImFjdGl2ZSIsImNoaWxkcmVuIiwiaHJlZiIsImhlYWRlciIsImhlYWRlckxpbmsiLCJkaWIiLCJoZWFkZXJMaXN0IiwiSGVhZGVyIiwiYWN0aXZlUGFnZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFBQSxBQUFPOzs7O0FBQ1AsQUFBTzs7OztBQUNQLEFBQVM7Ozs7Ozs7QUFFVCxJQUFNLHlCQUFBLEFBQVksdUJBQWxCO0FBUUEsSUFBTSwrQkFBQSxBQUFrQixvQ0FBbEIsQUFDUSxXQURkOztBQUtBLElBQU0sU0FBUyxTQUFULEFBQVMsYUFBQTtNQUFBLEFBQUcsY0FBSCxBQUFHO01BQUgsQUFBVyxnQkFBWCxBQUFXO01BQVgsQUFBcUIsWUFBckIsQUFBcUI7eUJBQ2xDLGNBQUEsT0FBRyxNQUFILEFBQVMsTUFBTSxXQUFXLFNBQUEsQUFBUyxrQkFBbkMsQUFBcUQ7Z0JBQXJEO2tCQUFBLEFBQ0c7QUFESDtHQUFBLEVBRGEsQUFDYjtBQURGOztBQU1BLElBQU0sc0JBQUEsQUFBUyx1QkFBZjtBQVVBLElBQU0sMEJBQUEsQUFBYSx1QkFBbkI7QUFLQSxJQUFNLG1CQUFBLEFBQU0sdUJBQVo7QUFHQSxJQUFNLDBCQUFBLEFBQWEsdUJBQW5COztBQVFBLElBQU0sU0FBUyxTQUFULEFBQVMsY0FBQTtNQUFBLEFBQUcsbUJBQUgsQUFBRzt5QkFDaEIsY0FBQSxZQUFRLFdBQVIsQUFBbUI7Z0JBQW5CO2tCQUFBLEFBQ0U7QUFERjtHQUFBLGtCQUNFLGNBQUEsUUFBSSxXQUFKLEFBQWU7Z0JBQWY7a0JBQUEsQUFDRTtBQURGO3FCQUNFLEFBQUMsZ0NBQUssTUFBTixBQUFXO2dCQUFYO2tCQUFBLEFBQ0U7QUFERjtxQkFDRSxjQUFBLE9BQUcsV0FBSCxBQUFjO2dCQUFkO2tCQUFBO0FBQUE7S0FITixBQUNFLEFBQ0UsQUFDRSxBQUdKLGtDQUFBLGNBQUE7OENBQUE7O2dCQUFBO2tCQUFBLEFBS0U7QUFMRjtBQUFBLHFCQUtFLGNBQUEsUUFBSSxXQUFKLEFBQWU7Z0JBQWY7a0JBQUEsQUFDRTtBQURGO3FCQUNFLGNBQUEsUUFBSSxXQUFKLEFBQWU7Z0JBQWY7a0JBQUEsQUFDRTtBQURGO3FCQUNFLEFBQUMsZ0NBQUssTUFBTixBQUFXLFNBQVEsVUFBbkI7Z0JBQUE7a0JBQUEsQUFDRTtBQURGO3FCQUNHLGNBQUQsVUFBUSxRQUFRLGVBQWhCLEFBQStCLFFBQVEsTUFBdkMsQUFBNEM7Z0JBQTVDO2tCQUFBO0FBQUE7S0FITixBQUNFLEFBQ0UsQUFDRSxBQUtKLHdDQUFBLGNBQUEsUUFBSSxXQUFKLEFBQWU7Z0JBQWY7a0JBQUEsQUFDRTtBQURGO3FCQUNFLEFBQUMsZ0NBQUssTUFBTixBQUFXLGFBQVksVUFBdkI7Z0JBQUE7a0JBQUEsQUFDRTtBQURGO3FCQUNHLGNBQUQsVUFBUSxRQUFRLGVBQWhCLEFBQStCLFlBQVksTUFBM0MsQUFBZ0Q7Z0JBQWhEO2tCQUFBO0FBQUE7S0FWTixBQVFFLEFBQ0UsQUFDRSxBQUtKLHNDQUFBLGNBQUEsUUFBSSxXQUFKLEFBQWU7Z0JBQWY7a0JBQUEsQUFDRTtBQURGO3FCQUNFLEFBQUMsZ0NBQUssTUFBTixBQUFXLFdBQVUsVUFBckI7Z0JBQUE7a0JBQUEsQUFDRTtBQURGO3FCQUNHLGNBQUQsVUFBUSxRQUFRLGVBQWhCLEFBQStCLFVBQVUsTUFBekMsQUFBOEM7Z0JBQTlDO2tCQUFBO0FBQUE7S0FqQk4sQUFlRSxBQUNFLEFBQ0UsQUFLSiwwQ0FBQSxjQUFBLFFBQUksV0FBSixBQUFlO2dCQUFmO2tCQUFBLEFBQ0U7QUFERjtxQkFDRSxBQUFDLGdDQUFLLE1BQU4sQUFBVyxnQkFBZSxVQUExQjtnQkFBQTtrQkFBQSxBQUNFO0FBREY7cUJBQ0csY0FBRCxVQUFRLFFBQVEsZUFBaEIsQUFBK0IsZUFBZSxNQUE5QyxBQUFtRDtnQkFBbkQ7a0JBQUE7QUFBQTtLQXBDRyxBQUNiLEFBTUUsQUFLRSxBQXNCRSxBQUNFLEFBQ0U7QUFwQ1osQUE4Q0E7O2tCQUFBLEFBQWUiLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiL1VzZXJzL21hdHQvZGV2ZWxvcG1lbnQvbWhtZSJ9

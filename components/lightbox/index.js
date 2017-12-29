@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 
-import { css } from 'emotion'
-import styled from 'emotion/react'
+import styled, { css } from 'react-emotion'
 
 const ImageTitle = styled.h4`
   text-decoration: underline;
   text-decoration-style: wavy;
   text-decoration-color: var(--c);
   text-underline-position: under;
-  padding-bottom: .5em;
+  padding-bottom: 0.5em;
   font-size: 2.5rem;
 `
 
@@ -100,41 +99,39 @@ export default class extends Component {
   }
   render() {
     let { images } = this.props
-    let thumbnails = images.map((image, index) =>
-      <div css={`margin: 3rem 0;`} key={index}>
-        <ImageTitle>
-          {image.title}
-        </ImageTitle>
-        <p>
-          {image.text}
-        </p>
+    let thumbnails = images.map((image, index) => (
+      <div
+        css={`
+          margin: 3rem 0;
+        `}
+        key={index}
+      >
+        <ImageTitle>{image.title}</ImageTitle>
+        <p>{image.text}</p>
         <LightBoxWrapper>
           <LightBoxLink href={'#LB_target_' + index}>
             <LightBoxImage id={'LB_' + index} src={image.lowres} alt={image.caption} />
           </LightBoxLink>
-          <LightBoxCaption>
-            {image.caption}
-          </LightBoxCaption>
+          <LightBoxCaption>{image.caption}</LightBoxCaption>
         </LightBoxWrapper>
-      </div>,
-    )
+      </div>
+    ))
     return (
       <section>
         {thumbnails}
         {this.state &&
-          this.state.loadHighRes &&
-          <section>
-            {images.map((image, index) =>
-              <LightBoxTargetWrapper href={'#LB_' + index} id={'LB_target_' + index} key={index}>
-                <LightBoxTarget>
-                  <LightBoxTargetImg src={image.img} alt={image.caption} />
-                  <LightBoxCaption>
-                    {image.caption}
-                  </LightBoxCaption>
-                </LightBoxTarget>
-              </LightBoxTargetWrapper>,
-            )}
-          </section>}
+          this.state.loadHighRes && (
+            <section>
+              {images.map((image, index) => (
+                <LightBoxTargetWrapper href={'#LB_' + index} id={'LB_target_' + index} key={index}>
+                  <LightBoxTarget>
+                    <LightBoxTargetImg src={image.img} alt={image.caption} />
+                    <LightBoxCaption>{image.caption}</LightBoxCaption>
+                  </LightBoxTarget>
+                </LightBoxTargetWrapper>
+              ))}
+            </section>
+          )}
       </section>
     )
   }

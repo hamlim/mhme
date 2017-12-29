@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Head from 'next/head'
 import Header from '../../components/header'
 
-import { css } from 'emotion'
-import styled from 'emotion/react'
+import styled, { css } from 'react-emotion'
 
 const Container = styled.div`
   margin: 3rem auto 6rem;

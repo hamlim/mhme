@@ -4,27 +4,27 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _extends2 = require('babel-runtime/helpers/extends');
+var _extends2 = require('next/node_modules/babel-runtime/helpers/extends');
 
 var _extends3 = _interopRequireDefault(_extends2);
 
-var _getPrototypeOf = require('babel-runtime/core-js/object/get-prototype-of');
+var _getPrototypeOf = require('next/node_modules/babel-runtime/core-js/object/get-prototype-of');
 
 var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
 
-var _classCallCheck2 = require('babel-runtime/helpers/classCallCheck');
+var _classCallCheck2 = require('next/node_modules/babel-runtime/helpers/classCallCheck');
 
 var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-var _createClass2 = require('babel-runtime/helpers/createClass');
+var _createClass2 = require('next/node_modules/babel-runtime/helpers/createClass');
 
 var _createClass3 = _interopRequireDefault(_createClass2);
 
-var _possibleConstructorReturn2 = require('babel-runtime/helpers/possibleConstructorReturn');
+var _possibleConstructorReturn2 = require('next/node_modules/babel-runtime/helpers/possibleConstructorReturn');
 
 var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
 
-var _inherits2 = require('babel-runtime/helpers/inherits');
+var _inherits2 = require('next/node_modules/babel-runtime/helpers/inherits');
 
 var _inherits3 = _interopRequireDefault(_inherits2);
 
@@ -40,7 +40,7 @@ var _colors = require('../styles/colors');
 
 var _colors2 = _interopRequireDefault(_colors);
 
-var _server = require('emotion/server');
+var _emotionServer = require('emotion-server');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -121,10 +121,12 @@ var MyDocument = function (_Document) {
 
       var _renderPage = renderPage(),
           html = _renderPage.html,
-          head = _renderPage.head;
+          head = _renderPage.head,
+          errorHtml = _renderPage.errorHtml,
+          chunks = _renderPage.chunks;
 
-      var emotionStyles = (0, _server.extractCritical)(html);
-      return (0, _extends3.default)({ html: html, head: head }, emotionStyles);
+      var emotionStyles = (0, _emotionServer.extractCritical)(html);
+      return (0, _extends3.default)({ html: html, head: head, errorHtml: errorHtml, chunks: chunks }, emotionStyles);
     }
   }]);
 
@@ -132,3 +134,4 @@ var MyDocument = function (_Document) {
 }(_document2.default);
 
 exports.default = MyDocument;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL19kb2N1bWVudC5qcyJdLCJuYW1lcyI6WyJSZWFjdCIsIkRvY3VtZW50IiwiSGVhZCIsIk1haW4iLCJOZXh0U2NyaXB0IiwiY29sb3JzIiwiZXh0cmFjdENyaXRpY2FsIiwiTXlEb2N1bWVudCIsImEiLCJhTXV0ZWQiLCJiIiwiYk11dGVkIiwiYyIsImNNdXRlZCIsImQiLCJkTXV0ZWQiLCJncmF5IiwiZ3JheU11dGVkIiwibGlnaHRHcmF5Iiwid2hpdGUiLCJibGFjayIsIl9faHRtbCIsInByb3BzIiwiY3NzIiwicmVuZGVyUGFnZSIsImh0bWwiLCJoZWFkIiwiZXJyb3JIdG1sIiwiY2h1bmtzIiwiZW1vdGlvblN0eWxlcyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsQUFBTzs7OztBQUNQLEFBQU8sQUFBWSxBQUFNLEFBQU07Ozs7QUFDL0IsQUFBTyxBQUFZOzs7O0FBQ25CLEFBQVM7Ozs7Ozs7SSxBQUVZOzs7Ozs7Ozs7Ozs2QkFNVixBQUNQOzZCQUNFLGNBQUEsVUFBTSxXQUFOLEFBQWdCO29CQUFoQjtzQkFBQSxBQUNFO0FBREY7T0FBQSxrQkFDRSxBQUFDOztvQkFBRDtzQkFBQSxBQUNFO0FBREY7QUFBQSxpREFDUSxTQUFOLEFBQWM7b0JBQWQ7c0JBREYsQUFDRSxBQUNBO0FBREE7a0RBQ00sTUFBTixBQUFXLGVBQWMsU0FBUyxpQkFBbEMsQUFBeUM7b0JBQXpDO3NCQUZGLEFBRUUsQUFDQTtBQURBO2tEQUNNLE1BQU4sQUFBVyxZQUFXLFNBQXRCLEFBQThCO29CQUE5QjtzQkFIRixBQUdFLEFBQ0E7QUFEQTtrREFDTSxLQUFOLEFBQVUsY0FBYSxNQUF2QixBQUE0QjtvQkFBNUI7c0JBSkYsQUFJRSxBQUNBO0FBREE7a0RBQ00sS0FBTixBQUFVLGNBQWEsTUFBdkIsQUFBNEI7b0JBQTVCO3NCQUxGLEFBS0UsQUFDQTtBQURBOzBCQUNBLGNBQUE7O29CQUFBO3NCQUFBO0FBQUE7QUFBQSxxREFHUyxpQkFIVCxBQUdnQixtQ0FDRCxpQkFKZixBQUlzQixrQ0FDYixpQkFMVCxBQUtnQixtQ0FDRCxpQkFOZixBQU1zQixrQ0FDYixpQkFQVCxBQU9nQixtQ0FDRCxpQkFSZixBQVFzQixvQ0FFYixpQkFWVCxBQVVnQixtQ0FDRCxpQkFYZixBQVdzQix5Q0FHVixpQkFkWixBQWNtQix5Q0FDRCxpQkFmbEIsQUFleUIsOENBQ1AsaUJBaEJsQixBQWdCeUIseUNBQ1osaUJBakJiLEFBaUJvQixxQ0FDUCxpQkFsQmIsQUFrQm9CLFFBeEJ0QixBQU1FLEFBOENBLHl1QkFBTyx5QkFBeUIsRUFBRSxRQUFRLEtBQUEsQUFBSyxNQUEvQyxBQUFnQyxBQUFxQjtvQkFBckQ7c0JBckRKLEFBQ0UsQUFvREUsQUFFRjtBQUZFOzJCQUVGLGNBQUE7O29CQUFBO3NCQUFBLEFBQ0U7QUFERjtBQUFBLHlCQUNFLEFBQUM7O29CQUFEO3NCQURGLEFBQ0UsQUFDQTtBQURBO0FBQUEsMEJBQ0EsQUFBQzs7b0JBQUQ7c0JBMUROLEFBQ0UsQUF1REUsQUFFRSxBQUlQO0FBSk87QUFBQTs7OzswQ0FoRStCO1VBQWQsQUFBYyxrQkFBZCxBQUFjOzt3QkFBQSxBQUNLO1VBREwsQUFDN0IsbUJBRDZCLEFBQzdCO1VBRDZCLEFBQ3ZCLG1CQUR1QixBQUN2QjtVQUR1QixBQUNqQix3QkFEaUIsQUFDakI7VUFEaUIsQUFDTixxQkFETSxBQUNOLEFBQy9COztVQUFNLGdCQUFnQixvQ0FBdEIsQUFBc0IsQUFBZ0IsQUFDdEM7c0NBQVMsTUFBVCxNQUFlLE1BQWYsTUFBcUIsV0FBckIsV0FBZ0MsUUFBaEMsVUFBQSxBQUEyQyxBQUM1Qzs7Ozs7QUFMcUMsQTs7a0JBQW5CLEEiLCJmaWxlIjoiX2RvY3VtZW50LmpzP2VudHJ5Iiwic291cmNlUm9vdCI6Ii9Vc2Vycy9tYXR0L2RldmVsb3BtZW50L21obWUifQ==

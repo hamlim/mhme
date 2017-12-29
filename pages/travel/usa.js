@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Header from '../../components/header'
 import USA from '../../components/travel/usa'
 
-import styled from 'emotion/react'
+import styled from 'react-emotion'
 
 const Wrapper = styled.article`
   display: flex;
@@ -14,7 +14,7 @@ const Section = styled.section`
   margin: 1rem auto;
 `
 
-export default () =>
+export default () => (
   <Wrapper>
     <Header activePage="travel" />
     <Section>
@@ -26,3 +26,4 @@ export default () =>
     </Section>
     <USA />
   </Wrapper>
+)

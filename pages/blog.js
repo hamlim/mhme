@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Header from '../components/header'
 import Subnav from '../components/subnav'
-import styled from 'emotion/react'
+import styled from 'react-emotion'
 
 const Wrapper = styled.article`
   margin: 3rem auto 6rem;
@@ -15,7 +15,7 @@ const StyledLink = styled.a`
   text-decoration: none;
 `
 
-export default () =>
+export default () => (
   <main className="blog">
     <Head>
       <meta charset="UTF-8" />
@@ -35,3 +35,4 @@ export default () =>
       </section>
     </Wrapper>
   </main>
+)

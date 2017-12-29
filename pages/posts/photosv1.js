@@ -3,8 +3,7 @@ import Head from 'next/head'
 import Header from '../../components/header'
 import Lightbox from '../../components/lightbox'
 
-import styled from 'emotion/react'
-import { injectGlobal } from 'emotion'
+import styled, { injectGlobal } from 'react-emotion'
 
 const Wrapper = styled.main`
   margin-top: 3rem;
@@ -13,7 +12,9 @@ const Wrapper = styled.main`
   margin-right: auto;
 `
 
-const Title = styled.h2`font-size: 4rem;`
+const Title = styled.h2`
+  font-size: 4rem;
+`
 
 export default class extends Component {
   images = [

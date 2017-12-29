@@ -1,13 +1,13 @@
 import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import colors from '../styles/colors'
-import { extractCritical } from 'emotion/server'
+import { extractCritical } from 'emotion-server'
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
-    const { html, head } = renderPage()
+    const { html, head, errorHtml, chunks } = renderPage()
     const emotionStyles = extractCritical(html)
-    return { html, head, ...emotionStyles }
+    return { html, head, errorHtml, chunks, ...emotionStyles }
   }
   render() {
     return (

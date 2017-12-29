@@ -1,38 +1,38 @@
 import React from 'react'
 
-import { css } from 'emotion'
+import { css } from 'react-emotion'
 
 const svg = css`
-	max-width: 75rem;
-	margin: 0 auto;
-	height: auto;
-	max-height: 90vh;
-	& [title="Washington"],
-  & [title="New York"],
-  & [title="Massachusetts"],
-  & [title="Florida"],
-  & [title="California"],
-  & [title="Oregon"],
-  & [title="Montana"],
-  & [title="Idaho"],
-  & [title="Nevada"],
-  & [title="Colorado"],
-  & [title="Arizona"],
-  & [title="Utah"],
-  & [title="Wyoming"],
-  & [title="Rhode Island"] {
-  	fill: var(--c);
+  max-width: 75rem;
+  margin: 0 auto;
+  height: auto;
+  max-height: 90vh;
+  & [title='Washington'],
+  & [title='New York'],
+  & [title='Massachusetts'],
+  & [title='Florida'],
+  & [title='California'],
+  & [title='Oregon'],
+  & [title='Montana'],
+  & [title='Idaho'],
+  & [title='Nevada'],
+  & [title='Colorado'],
+  & [title='Arizona'],
+  & [title='Utah'],
+  & [title='Wyoming'],
+  & [title='Rhode Island'] {
+    fill: var(--c);
   }
 `
 const land = css`
-	fill: #CCCCCC;
-	fill-opacity: 1;
-	stroke:white;
-	stroke-opacity: 1;
-	stroke-width:0.5;
+  fill: #cccccc;
+  fill-opacity: 1;
+  stroke: white;
+  stroke-opacity: 1;
+  stroke-width: 0.5;
 `
 
-export default () =>
+export default () => (
   <section>
     <svg viewBox="500 430 550 400" className={svg} preserveAspectRatio="xMidYMax">
       <g>
@@ -345,3 +345,4 @@ export default () =>
       </g>
     </svg>
   </section>
+)

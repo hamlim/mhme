@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Header from '../components/header'
-import styled from 'emotion/react'
+import styled from 'react-emotion'
 
 const Wrapper = styled.article`
   display: flex;
@@ -15,7 +15,7 @@ const Section = styled.section`
 
 const Big = styled.p`
   nt-size: 2rem;
-  margin: .5rem 0;
+  margin: 0.5rem 0;
 `
 
 const StyledLink = styled.a`
@@ -23,7 +23,7 @@ const StyledLink = styled.a`
   text-decoration: none;
 `
 
-export default () =>
+export default () => (
   <main>
     <Head>
       <meta charset="UTF-8" />
@@ -46,3 +46,4 @@ export default () =>
       </Section>
     </Wrapper>
   </main>
+)

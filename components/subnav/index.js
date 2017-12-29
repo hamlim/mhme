@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { css } from 'emotion'
-import styled from 'emotion/react'
+import styled, { css } from 'react-emotion'
 
 const StyledSubnav = styled.nav`
   max-width: var(--width);
@@ -29,7 +28,7 @@ const SubnavLink = styled.a`
   }
 `
 
-const Subnav = ({ page }) =>
+const Subnav = ({ page }) => (
   <StyledSubnav>
     <Link href="/blog">
       <SubnavLink className={page === 'blog' && 'is-active'}>Blog</SubnavLink>
@@ -41,5 +40,6 @@ const Subnav = ({ page }) =>
       <SubnavLink className={page === 'tags' && 'is-active'}>Tags</SubnavLink>
     </Link>
   </StyledSubnav>
+)
 
 export default Subnav

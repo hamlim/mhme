@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import 'whatwg-fetch'
-import styled from 'emotion/react'
-import { keyframes } from 'emotion'
+import styled, { keyframes } from 'react-emotion'
 import Head from 'next/head'
 import Header from '../../components/header'
 import Subnav from '../../components/subnav'
@@ -13,7 +12,7 @@ const Wrapper = styled.article`
   margin-left: auto;
   margin-right: auto;
   @media screen and (max-width: 40rem) {
-    margin: 3rem .25em;
+    margin: 3rem 0.25em;
   }
 `
 
@@ -45,7 +44,7 @@ export default class extends Component {
       .catch(console.warn)
   }
 
-  render = () =>
+  render = () => (
     <main>
       <Head>
         <title>My Feed of Blog Posts</title>
@@ -57,4 +56,5 @@ export default class extends Component {
         {this.state.feed.length > 0 ? <FeedApp feed={this.state.feed} /> : <Loading children="🕐" />}
       </Wrapper>
     </main>
+  )
 }
