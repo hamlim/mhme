@@ -11,11 +11,9 @@
     "markdown-it-inline-comments": "^1.0.1",
     "markdown-it-task-checkbox": "^1.0.3",
     "next": "^4.2.1",
-    "postcss-cssnext": "^2.10.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-emotion": "^9.0.0-1",
-    "styled-jsx-postcss": "^0.1.5",
     "tachyons": "4.7.0",
     "tachyons-measured": "^1.0.3",
     "whatwg-fetch": "^2.0.3"
