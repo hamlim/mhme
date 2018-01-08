@@ -53,6 +53,26 @@ export default () => (
       >
         <Project>
           <h4>
+            <StyledLink href="https://github.com/hamlim/app-config">appconfig</StyledLink> - 2018
+          </h4>
+          <Description>
+            A universal config file format for web applications.
+          </Description>
+        </Project>
+        <Project>
+          <h4>
+            <StyledLink href="https://github.com/hamlim/resp">resp</StyledLink> - 2018
+          </h4>
+          <Description>A simple css-in-js responsive utility package.</Description>
+        </Project>
+        <Project>
+          <h4>
+            <StyledLink href="https://github.com/hamlim/ds">DS</StyledLink> - 2018
+          </h4>
+          <Description>Extremely work in progress project to develop a single source of truth for design systems.</Description>
+        </Project>
+        <Project>
+          <h4>
             <StyledLink href="https://htmlcolors.now.sh/">HTML Colors</StyledLink>
           </h4>
           <Description>A list of all the HTML named colors, with links for generating a color palette.</Description>
