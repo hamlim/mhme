@@ -12,7 +12,7 @@
     "markdown-it-task-checkbox": "^1.0.3",
     "next": "^14.2.32",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react-dom": "^16.2.1",
     "react-emotion": "^9.0.0-1",
     "tachyons": "4.7.0",
     "tachyons-measured": "^1.0.3",
